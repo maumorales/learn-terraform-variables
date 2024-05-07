@@ -20,7 +20,7 @@ module "vpc" {
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
 
   enable_nat_gateway = true
-  enable_vpn_gateway = false
+  enable_vpn_gateway = var.enable_vpn_gateway
 
   tags = {
     project     = "project-alpha",
@@ -106,7 +106,7 @@ module "ec2_instances" {
 
   depends_on = [module.vpc]
 
-  instance_count     = 2
+  instance_count     = var.instance_count
   instance_type      = "t2.micro"
   subnet_ids         = module.vpc.private_subnets[*]
   security_group_ids = [module.app_security_group.security_group_id]
