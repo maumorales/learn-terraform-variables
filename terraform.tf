@@ -3,10 +3,10 @@
 
 terraform {
   cloud {
-      organization = "QuantumSentinel"
-      workspaces {
-        name = "learn-terraform-variables"
-      }
+    organization = "QuantumSentinel"
+    workspaces {
+      name = "learn-terraform-variables"
+    }
   }
 
   required_providers {

@@ -42,7 +42,7 @@ variable "private_subnet_count" {
 variable "public_subnet_cidr_blocks" {
   description = "Available cidr blocks for public subnets."
   type        = list(string)
-  default     = [
+  default = [
     "10.0.1.0/24",
     "10.0.2.0/24",
     "10.0.3.0/24",
@@ -57,7 +57,7 @@ variable "public_subnet_cidr_blocks" {
 variable "private_subnet_cidr_blocks" {
   description = "Available cidr blocks for private subnets."
   type        = list(string)
-  default     = [
+  default = [
     "10.0.101.0/24",
     "10.0.102.0/24",
     "10.0.103.0/24",
@@ -68,3 +68,13 @@ variable "private_subnet_cidr_blocks" {
     "10.0.108.0/24",
   ]
 }
+
+variable "resource_tags" {
+  description = "Tags to set for all resources"
+  type        = map(string)
+  default = {
+    project     = "project-alpha",
+    environment = "dev"
+  }
+}
+
